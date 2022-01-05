@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.css';
+import PostAPIService from './services/post.service';
 
 export default class App extends React.Component {
   state = {
@@ -10,11 +11,19 @@ export default class App extends React.Component {
     super();
   }
 
-  render() {
+  async getData() {
+    PostAPIService.getPosts().then((result) => console.log(result));
     fetch('https://falling-frost-9a99.jaynaik.workers.dev/posts', {
       method: 'GET',
-      headers: { 'Content-Type': 'application/json' },
-    }).then((res) => console.log(res.json()));
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+      });
+  }
+
+  render() {
+    this.getData();
 
     return (
       <div>
