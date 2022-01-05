@@ -1,5 +1,5 @@
 export default class APIHandler {
-  static host = process.env.BACKEND_URL;
+  static host = 'https://falling-frost-9a99.jaynaik.workers.dev'; // process.env.BACKEND_URL;
 
   static fetchGet(url) {
     return new Promise((resolve, reject) => {

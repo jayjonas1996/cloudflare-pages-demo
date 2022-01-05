@@ -1,4 +1,5 @@
 {
+  "startCommand": "npm start",
   "env": {
     "BACKEND_URL": "https://falling-frost-9a99.jaynaik.workers.dev"
   }

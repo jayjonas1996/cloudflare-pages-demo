@@ -13,13 +13,6 @@ export default class App extends React.Component {
 
   async getData() {
     PostAPIService.getPosts().then((result) => console.log(result));
-    fetch('https://falling-frost-9a99.jaynaik.workers.dev/posts', {
-      method: 'GET',
-    })
-      .then((response) => response.json())
-      .then((response) => {
-        console.log(response);
-      });
   }
 
   render() {
