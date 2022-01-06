@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
 import PostAPIService from './services/post.service';
+import Post from './models/post.model';
 
 export default class App extends React.Component {
   state = {
@@ -12,7 +13,12 @@ export default class App extends React.Component {
   }
 
   async getData() {
-    PostAPIService.getPosts().then((result) => console.log(result));
+    posts = [];
+    PostAPIService.getPosts().then((result) => {
+      console.log(result);
+      result.forEach((data) => posts.push(new Post(data)));
+      console.log(posts);
+    });
   }
 
   render() {
