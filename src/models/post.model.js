@@ -6,7 +6,7 @@ export default class Post {
     if (data) {
       this.username = data.username;
       this.profilePicture =
-        data.profile_picture |
+        data.profile_picture ||
         'https://www.personality-insights.com/wp-content/uploads/2017/12/default-profile-pic-e1513291410505.jpg';
 
       this.title = data.title;

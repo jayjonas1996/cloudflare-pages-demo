@@ -2,7 +2,7 @@ import React from 'react';
 import './style.css';
 
 import Post from './models/post.model';
-import PostComponent from './components/post.component';
+import PostComponent from './components/post/post.component';
 import PostAPIService from './services/post.service';
 
 export default class App extends React.Component {
@@ -12,7 +12,7 @@ export default class App extends React.Component {
 
   constructor() {
     super();
-    this.getData();
+    // this.getData();
   }
 
   getData() {
