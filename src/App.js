@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
-import PostAPIService from './services/post.service';
-import Post from './models/post.model';
+import PostAPIService from './post.service.js';
+// import Post from './models/post.model';
 
 export default class App extends React.Component {
   state = {
