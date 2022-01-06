@@ -12,7 +12,7 @@ export default class App extends React.Component {
 
   constructor() {
     super();
-    // this.getData();
+    this.getData();
   }
 
   getData() {

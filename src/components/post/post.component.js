@@ -1,4 +1,5 @@
 import React from 'react';
+import './post.component.css';
 
 export default class PostComponent extends React.Component {
   constructor(props) {
@@ -13,15 +14,11 @@ export default class PostComponent extends React.Component {
         <div className="profile-bar">
           <div className="profile-picture-container">
             <img className="profile-picture" src={this.post.profilePicture} />
-            <div>
+            <div className='title'>
               <h4>{this.post.title}</h4>
             </div>
-            <div className='content-container'>
-
-            </div>
-            <div className='action-bar'>
-      
-            </div>
+            <div className="content-container"></div>
+            <div className="action-bar"></div>
           </div>
         </div>
       </div>
