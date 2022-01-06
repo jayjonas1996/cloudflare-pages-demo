@@ -1,3 +1,4 @@
+
 export default class media {
   constructor(data) {
     this.mediaType = data.media_type;

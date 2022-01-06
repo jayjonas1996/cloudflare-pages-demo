@@ -1,4 +1,5 @@
-import Media from './media.model.js';
+import Media from './media.model';
+import Comment from './comment.model';
 
 export default class Post {
   constructor(data) {
@@ -21,7 +22,7 @@ export default class Post {
       this.comments = [];
       if (data.comments) {
         data.comments.forEach((comment) => {
-          this.comments.push();
+          this.comments.push(new Comment(comment));
         });
       }
     }
