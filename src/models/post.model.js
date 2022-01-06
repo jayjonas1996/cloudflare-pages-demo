@@ -12,15 +12,18 @@ export default class Post {
       this.content = data.content;
       this.timestamp = new Date(data.timestamp); // 2022-05-22T05:00:00.000Z
       this.medias = [];
-
-      data.medias.forEach((media) => {
-        this.medias.push(new Media(media));
-      });
+      if (data.medias) {
+        data.medias.forEach((media) => {
+          this.medias.push(new Media(media));
+        });
+      }
 
       this.comments = [];
-      data.comments.forEach((comment) => {
-        this.comments.push();
-      });
+      if (data.comments) {
+        data.comments.forEach((comment) => {
+          this.comments.push();
+        });
+      }
     }
   }
 }

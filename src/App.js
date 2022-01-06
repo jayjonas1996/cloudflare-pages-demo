@@ -1,7 +1,8 @@
 import React from 'react';
 import './style.css';
 import PostAPIService from './post.service.js';
-// import Post from './models/post.model';
+import Post from './models/post.model';
+import PostComponent from './components/post.component';
 
 export default class App extends React.Component {
   state = {
@@ -10,25 +11,32 @@ export default class App extends React.Component {
 
   constructor() {
     super();
+    this.getData();
   }
 
-  async getData() {
-    posts = [];
+  getData() {
     PostAPIService.getPosts().then((result) => {
-      console.log(result);
-      result.forEach((data) => posts.push(new Post(data)));
-      console.log(posts);
+      let posts = [];
+      for (const data of result) {
+        posts.push(new Post(data));
+      }
+      this.setState({
+        posts: posts,
+      });
     });
   }
 
-  render() {
-    this.getData();
+  getPostComponents() {
+    let postElements = [];
+    for (const e of this.state.posts) {
+      postElements.push(<PostComponent data={e}></PostComponent>);
+    }
+    return postElements;
+  }
 
-    return (
-      <div>
-        <h1>Hello StackBlitz!</h1>
-        <p>Start editing to see some magic happen :)</p>
-      </div>
-    );
+  render() {
+    let postElements = this.getPostComponents();
+
+    return <div>{postElements}</div>;
   }
 }
